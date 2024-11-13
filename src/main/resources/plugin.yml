@@ -1,0 +1,27 @@
+name: DeathNote
+version: 2.0.0
+main: engineering.catboy.deathnote.DeathNote
+author: CatboyEngineering
+website: catboy.engineering
+api-version: 1.20
+commands:
+  deathnote:
+    description: Get a new Death Note
+permissions:
+  deathnote.reload:
+    default: op
+  deathnote.get:
+    default: op
+  deathnote.use:
+    default: op
+  deathnote.exempt:
+    default: false
+  deathnote.unlimited:
+    default: op
+  deathnote.*:
+    children:
+      deathnote.reload: true
+      deathnote.get: true
+      deathnote.use: true
+      deathnote.exempt: true
+      deathnote.unlimited: true
