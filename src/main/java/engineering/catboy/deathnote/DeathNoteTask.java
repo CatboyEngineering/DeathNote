@@ -1,5 +1,6 @@
 package engineering.catboy.deathnote;
 
+import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -19,11 +20,12 @@ public class DeathNoteTask extends BukkitRunnable {
 
         if(player != null && player.isOnline()) {
             if(!player.hasPermission("deathnote.exempt")) {
+                player.setHealth(6d);
                 player.setFireTicks(20 * 15);
-                player.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 20 * 15, 8, false, false, false));
-                player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 15, 2, false, false, false));
-                player.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 20 * 15, 3, false, false, false));
-                player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 20 * 15, 8, false, false, false));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 20 * 10, 8, false, false, false));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 10, 2, false, false, false));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 20 * 10, 3, false, false, false));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 20 * 10, 8, false, false, false));
             }
         }
     }
