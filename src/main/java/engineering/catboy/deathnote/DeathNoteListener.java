@@ -56,7 +56,7 @@ public class DeathNoteListener implements Listener {
                 event.setNewBookMeta(newMeta);
 
                 for(String target : targets) {
-                    new DeathNoteTask(plugin, target).runTaskLater(plugin, 20 * 30);
+                    new DeathNoteTask(plugin, target, false).runTaskLater(plugin, 20 * 30);
                 }
             }
         }
